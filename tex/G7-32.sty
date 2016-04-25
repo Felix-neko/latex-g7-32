@@ -168,13 +168,15 @@
   \MakeUppercase{\Nir@AnnOtchet \otchetname}\\
   \MakeUppercase{\otchetcomplement}
 
-  \vspace{4mm}
+  \vspace{8mm}
   \Nir@TitleAndSubject
 
   (\Nir@StageType)
+
   \par
   \vspace{4mm}
   \Nir@Schifer
+
 
 
   \vfill
@@ -192,13 +194,12 @@
 \newcommand\Nir@TitleAndSubject{\MakeUppercase{\Nir@Title}}
 %
 % Optionally, specify a different report subject:
-\newcommand*\NirSubject[2]{%
+\newcommand*\NirSubject[1]{%
   \renewcommand\Nir@TitleAndSubject{%
-    {#1}
     \Nir@Title
-    \vspace{4mm}
+    \vspace{8mm}
     \par
-    \NirSubjectModifier{{#2}}%
+    \NirSubjectModifier{#1}%
   }%
 }
 %
@@ -286,8 +287,8 @@
   \renewcommand*\mfirstucMakeUppercase{\MakeUppercase}%
 }
 
-\newcommand*\NirStage[4]{%
-  \NirSubject{#3}{#4}%
+\newcommand*\NirStage[3]{%
+  \NirSubject{#3}%
   \NirFinalStage[#2]{\emakefirstlc{#1}}%
 }
 % Usage example from virens
